@@ -1,0 +1,267 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>vCOWERT</groupId>
+  <artifactId>vCOWERT</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <maven.test.skip>false</maven.test.skip>
+ 
+  </properties>
+  
+  
+  <build>
+   <sourceDirectory>src</sourceDirectory>
+  </build>
+  
+  <repositories> 
+<repository>
+  <id>sonatype-ossrh</id>
+  <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+</repository>
+<repository>
+	<id>GroupDocsJavaAPI</id>
+	<name>GroupDocs Java API</name>
+	<url>http://repository.groupdocs.com/repo/</url>
+</repository>
+</repositories>
+  
+  <profiles>
+
+  <profile>
+  <id>combined</id>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      
+      <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>2.22.0</version>
+    <configuration>
+     <properties>
+            <property>
+              <name>URL</name>
+              <value>null</value>
+            </property>
+             <property>
+              <name>CMSURL</name>
+              <value>null</value>
+            </property>
+            <property>
+              <name>FONTOURL</name>
+              <value>null</value>
+            </property>
+             <property>
+              <name>DOCSDASHURL</name>
+              <value>null</value>
+            </property>
+            <property>
+              <name>Infrastructure</name>
+              <value>null</value>
+            </property>
+            <property>
+              <name>Browser</name>
+              <value>null</value>
+            </property>
+</properties>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+    </plugin> 
+    </plugins>
+  </build>
+  </profile>
+  
+  <profile>
+  <id>webcompare</id>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      
+      <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>2.22.0</version>
+    <configuration>
+    <parallel>methods</parallel>
+	<threadCount>2</threadCount>
+    <properties>
+     <property>
+              <name>URL_COUNT</name>
+              <value>null</value>
+     </property>
+     <property>
+              <name>XPATH</name>
+              <value>null</value>
+     </property>
+	</properties>
+          <suiteXmlFiles>
+            <suiteXmlFile>suite/webcompare.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+    </plugin> 
+    </plugins>
+  </build>
+  </profile>
+  
+ 
+  </profiles>
+  
+  
+  
+  
+  <dependencies>
+  <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+<dependency>
+     <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.3.3-SNAPSHOT</version>
+</dependency>
+
+
+  	<dependency>
+  		<groupId>org.seleniumhq.selenium</groupId>
+  		<artifactId>selenium-java</artifactId>
+  		<version>4.8.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.poi</groupId>
+  		<artifactId>poi</artifactId>
+  		<version>3.16</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>net.sourceforge.jexcelapi</groupId>
+  		<artifactId>jxl</artifactId>
+  		<version>2.6.12</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.poi</groupId>
+  		<artifactId>poi-ooxml</artifactId>
+  		<version>3.16</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.poi</groupId>
+  		<artifactId>poi-ooxml-schemas</artifactId>
+  		<version>3.16</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.logging.log4j</groupId>
+  		<artifactId>log4j-core</artifactId>
+  		<version>2.11.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.poi</groupId>
+  		<artifactId>poi-scratchpad</artifactId>
+  		<version>3.16</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.poi</groupId>
+  		<artifactId>ooxml-schemas</artifactId>
+  		<version>1.3</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.poi</groupId>
+  		<artifactId>poi-examples</artifactId>
+  		<version>3.16</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>commons-io</groupId>
+  		<artifactId>commons-io</artifactId>
+  		<version>2.4</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>commons-codec</groupId>
+  		<artifactId>commons-codec</artifactId>
+  		<version>1.10</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.commons</groupId>
+  		<artifactId>commons-collections4</artifactId>
+  		<version>4.1</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>commons-logging</groupId>
+  		<artifactId>commons-logging</artifactId>
+  		<version>1.2</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.testng</groupId>
+  		<artifactId>testng</artifactId>
+  		<version>6.14.3</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.maven.surefire</groupId>
+  		<artifactId>surefire-api</artifactId>
+  		<version>2.22.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.12</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.aventstack</groupId>
+  		<artifactId>extentreports</artifactId>
+  		<version>5.0.8</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.github.2gis.winium</groupId>
+  		<artifactId>winium-elements-desktop</artifactId>
+  		<version>0.1.0-1</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.github.2gis.winium</groupId>
+  		<artifactId>winium-webdriver</artifactId>
+  		<version>0.1.0-1</version>
+  	</dependency>
+  	<dependency>
+    <groupId>org.sonarsource.scanner.maven</groupId>
+    <artifactId>sonar-maven-plugin</artifactId>
+    <version>3.7.0.1746</version>
+</dependency>
+<dependency>
+    <groupId>ru.yandex.qatools.ashot</groupId>
+    <artifactId>ashot</artifactId>
+    <version>1.5.4</version>
+</dependency>
+<dependency>
+    <groupId>com.github.romankh3</groupId>
+    <artifactId>image-comparison</artifactId>
+    <version>4.4.0</version>
+</dependency>
+<dependency>
+        <groupId>com.groupdocs</groupId>
+        <artifactId>groupdocs-comparison</artifactId>
+        <version>21.6.1</version> 
+</dependency>
+<dependency>
+    <groupId>org.apache.pdfbox</groupId>
+    <artifactId>pdfbox</artifactId>
+    <version>2.0.26</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/bouncycastle/bcprov-jdk15 -->
+<!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15 -->
+<dependency>
+    <groupId>org.bouncycastle</groupId>
+    <artifactId>bcprov-jdk15</artifactId>
+    <version>1.46</version>
+</dependency>
+  </dependencies>
+</project>

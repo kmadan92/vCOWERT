@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<License>
+  <Data>
+    <LicensedTo>VMware</LicensedTo>
+    <EmailTo>madank@vmware.com</EmailTo>
+    <LicenseType>Developer Small Business</LicenseType>
+    <LicenseNote>1 Developer And 1 Deployment Location</LicenseNote>
+    <OrderID>220216115830</OrderID>
+    <UserID>908289</UserID>
+    <OEM>This is not a redistributable license</OEM>
+    <Products>
+      <Product>GroupDocs.Comparison for Java</Product>
+    </Products>
+    <EditionType>Professional</EditionType>
+    <SerialNumber>8cfcf98e-2c8d-417e-9dec-4742e4ac1165</SerialNumber>
+    <SubscriptionExpiry>20230216</SubscriptionExpiry>
+    <LicenseExpiry>20220316</LicenseExpiry>
+    <ExpiryNote>This is a temporary license for non-commercial use only and it will expire on 2022-03-16</ExpiryNote>
+    <LicenseVersion>3.0</LicenseVersion>
+    <LicenseInstructions>https://purchase.groupdocs.com/policies/use-license</LicenseInstructions>
+  </Data>
+  <Signature>Y99Jv1aJUFvPvpQGATPIaeB0qL2D3Na012EOf+R0nkAugbkrZP03gHPUrfaS84Haes9xMaO4IObxn58GrDYjZdBnhT3Qisv6aEHa8CXSiCdpfWaqHUJwExB83VnRykz/GHyV7wS02aaxuxjOtlo+ncE/UOjR4vOWbU/f8NlATPI=</Signature>
+</License>

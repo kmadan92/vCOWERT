@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<suite name="RegressionSuite">
+	<listeners>
+		<listener class-name="Utilities.ExtentListener" />
+	</listeners>
+	<test name="RegressionTest">
+		<classes>
+			<class name="Flows.RNA_Creation">
+				<methods>
+					<include name="createRN_NON_SAAS_Jira"/>
+					
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

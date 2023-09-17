@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="7">RegressionSuite</th></tr>
+<tr><td><a href="#t0">RegressionTest</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">4,775</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">RegressionSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">RegressionTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">Flows.NextGenAuthoring_ObjectManipulation</td><td><a href="#m0">authoringElementManipulation_Task</a></td><td rowspan="1">1547106984022</td><td rowspan="1">76</td></tr><tr class="failedeven"><td><a href="#m1">publicationElementVerfication</a></td><td rowspan="1">1547106982090</td><td rowspan="1">464</td></tr></tbody>
+</table>
+<h2>RegressionTest</h2><h3 id="m0">Flows.NextGenAuthoring_ObjectManipulation#authoringElementManipulation_Task</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Assertion Inside Catch expected [true] but found [false]
+	at Keywords.KeywordRepository.loadURL(KeywordRepository.java:410)
+	at Keywords.NextGenAuthoringKeywords.LoginNextGenAuthoring(NextGenAuthoringKeywords.java:29)
+	at Flows.NextGenAuthoring_ObjectManipulation.authoringElementManipulation_Task(NextGenAuthoring_ObjectManipulation.java:307)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">Flows.NextGenAuthoring_ObjectManipulation#publicationElementVerfication</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Assertion Inside Catch expected [true] but found [false]
+	at Keywords.KeywordRepository.loadURL(KeywordRepository.java:410)
+	at Keywords.NextGenAuthoringKeywords.LoginNextGenAuthoring(NextGenAuthoringKeywords.java:29)
+	at Flows.NextGenAuthoring_ObjectManipulation.publicationElementVerfication(NextGenAuthoring_ObjectManipulation.java:266)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

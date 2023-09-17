@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="Utilities.ExtentListener"/>
+  </listeners>
+  <test thread-count="5" name="ExampleTest(failed)">
+    <classes>
+      <class name="Flows.LoginLogout2">
+        <methods>
+          <include name="FirstTestCase"/>
+          <include name="EndTest"/>
+        </methods>
+      </class> <!-- Flows.LoginLogout2 -->
+    </classes>
+  </test> <!-- ExampleTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->

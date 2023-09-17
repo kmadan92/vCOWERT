@@ -1,0 +1,55 @@
+{
+	"User1" : {
+		
+		"Username" : "svc.csotest1@vmware.com",
+		"Password" : "9y^iVh@V@y9RX99J2^.",
+		"User" : "svc.csotest1"					
+	},
+	
+	"User2" : {
+		
+		"Username" : "svc.csotest2@vmware.com",
+		"Password" : "8@W^ibd.7vu9UZ1Q5!R",
+		"User" : "svc.csotest2"					
+	},
+	
+	"User3" : {
+		
+		"Username" : "svc.csotest3@vmware.com",
+		"Password" : "z.37G^Fd4S2Tu^cZ^!z",
+		"User" : "svc.csotest3"					
+	},
+	
+	"User4" : {
+		
+		"Username" : "svc.csotest4@vmware.com",
+		"Password" : "mG@!o3Pwo^Z!P96.7q7",
+		"User" : "svc.csotest4"					
+	},
+	
+	"User5" : {
+		
+		"Username" : "svc.csotest5@vmware.com",
+		"Password" : "BU^ddk62gHH!^D5.1u4",
+		"User" : "svc.csotest5"					
+	},
+	
+	"User6" : {
+		
+		"Username" : "svc.csotest6@vmware.com",
+		"Password" : "cD.s7c1g.^e66^9E^DH",
+		"User" : "svc.csotest6"					
+	},
+	
+	"User7" : {
+		
+		"Username" : "svc.csotest7@vmware.com",
+		"Password" : "2o^864Uq.hfF^m^T@ZL",
+		"User" : "svc.csotest7"					
+	},
+	
+	"place" : "london",
+	
+	"Topics" : ["aa","bb","cc"]
+	
+}
