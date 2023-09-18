@@ -94,10 +94,10 @@ public class Outputs_HTMLCompare extends Global_Utilities {
 	public void ImageComparator(String FolderTest, String FolderProd, String ResultFolder, String sheet) throws IOException {
 		
 		
-		System.out.println("--Running comparison on "+loopCounter+" files--");
+		System.out.println("--Running comparison on "+System.getProperty("URL_COUNT")+" files--");
 		
 		
-		for(int i=1;i<=loopCounter;i++)
+		for(int i=1;i<=Integer.parseInt(System.getProperty("URL_COUNT"));i++)
 		{
 			String Test = FolderTest+"\\"+getParameterFromInputSheet(sheet,"GUID",i,0)+".jpg";
 			String Prod = FolderProd+"\\"+getParameterFromInputSheet(sheet,"GUID",i,0)+".jpg";
@@ -113,22 +113,22 @@ public class Outputs_HTMLCompare extends Global_Utilities {
 	               if(ImageProd.getWidth() != ImageTest.getWidth() || ImageProd.getHeight() != ImageTest.getHeight())
 	         
 	               {   
-	            	   System.out.println("Size Mismatch for: "+getParameterFromInputSheet(sheet,"GUID",i,0));
-		               System.out.println("--Size of Image on Test--");
-		               System.out.println(ImageTest.getWidth()+","+ImageTest.getHeight());
-		               System.out.println("--Size of Image on Reference--");
-		               System.out.println(ImageProd.getWidth()+","+ImageProd.getHeight());
+//	            	   System.out.println("Size Mismatch for: "+getParameterFromInputSheet(sheet,"GUID",i,0));
+//		               System.out.println("--Size of Image on Test--");
+//		               System.out.println(ImageTest.getWidth()+","+ImageTest.getHeight());
+//		               System.out.println("--Size of Image on Reference--");
+//		               System.out.println(ImageProd.getWidth()+","+ImageProd.getHeight());
 		               
-		               System.out.println("---Resizing Images---");
+//		               System.out.println("---Resizing Images---");
 	            	   //Make size of both images same
 	            	   ImageProd = ImageComparisonUtil.resize(ImageProd, ImageTest.getWidth(), ImageTest.getHeight());
-		               
+		               /*
 		               System.out.println("--After Image Resize--");
 		               System.out.println("--Size of Image on Test--");
 		               System.out.println(ImageTest.getWidth()+","+ImageTest.getHeight());
 		               System.out.println("--Size of Image on Reference--");
 		               System.out.println(ImageProd.getWidth()+","+ImageProd.getHeight());
-		               
+		               */
 	            	   
 	               }
 	               
@@ -212,12 +212,12 @@ public class Outputs_HTMLCompare extends Global_Utilities {
 		System.out.println("--OpenURLandTakeScreenshotOnTest test Started--");
 		setThreadDataSheetName("HTMLCompare.xlsx");
 		
-		for(int i=1;i<=loopCounter;i++)
+		for(int i=1;i<=Integer.parseInt(System.getProperty("URL_COUNT"));i++)
 		{
 			String guid = getParameterFromInputSheet("HTML","GUID",i,0);
 			OpenURL(getParameterFromInputSheet("HTML","URLTEST",i,0));
 			Thread.sleep(3500);
-			WebElement ele = driver.get().findElement(By.xpath("//div[contains(@class,'rhs-center')]"));
+			WebElement ele = driver.get().findElement(By.xpath(System.getProperty("XPATH")));
 			getElementscreenshot("Test", guid, ele);
 			
 		}
@@ -233,12 +233,12 @@ public class Outputs_HTMLCompare extends Global_Utilities {
 		
 		setThreadDataSheetName("HTMLCompare.xlsx");
 		
-		for(int i=1;i<=loopCounter;i++)
+		for(int i=1;i<=Integer.parseInt(System.getProperty("URL_COUNT"));i++)
 		{
 			String guid = getParameterFromInputSheet("HTML","GUID",i,0);
 			OpenURL(getParameterFromInputSheet("HTML","URLPROD",i,0));
 			Thread.sleep(3500);
-			WebElement ele = wait.get().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'rhs-center')]")));
+			WebElement ele = wait.get().until(ExpectedConditions.visibilityOfElementLocated(By.xpath(System.getProperty("XPATH"))));
 			getElementscreenshot("Prod", guid, ele);
 			
 		}
@@ -246,90 +246,6 @@ public class Outputs_HTMLCompare extends Global_Utilities {
 		driver.get().close();
 		
 		System.out.println("--OpenURLandTakeScreenshotOnProd test Passed--");
-	}
-	
-	@Test(priority=0)
-	public void MD_OpenURLandTakeScreenshotOnTest() throws InterruptedException, IOException
-	{
-		System.out.println("--MD_OpenURLandTakeScreenshotOnTest test Started--");
-		setThreadDataSheetName("HTMLCompare.xlsx");
-		
-		for(int i=1;i<=loopCounter;i++)
-		{
-			String guid = getParameterFromInputSheet("MD","GUID",i,0);
-			OpenURL(getParameterFromInputSheet("MD","URLTEST",i,0));
-			Thread.sleep(3500);
-			WebElement ele = driver.get().findElement(By.xpath("//div[contains(@class,'rhs-center')]"));
-			getElementscreenshot("Test", guid, ele);
-			
-		}
-		driver.get().close();
-		
-		System.out.println("--MD_OpenURLandTakeScreenshotOnTest test Passed--");
-	}
-	
-	@Test(priority=0)
-	public void MD_OpenURLandTakeScreenshotOnProd() throws InterruptedException, IOException
-	{
-		System.out.println("--MD_OpenURLandTakeScreenshotOnProd test Started--");
-		
-		setThreadDataSheetName("HTMLCompare.xlsx");
-		
-		for(int i=1;i<=loopCounter;i++)
-		{
-			String guid = getParameterFromInputSheet("MD","GUID",i,0);
-			OpenURL(getParameterFromInputSheet("MD","URLPROD",i,0));
-			Thread.sleep(3500);
-			WebElement ele = wait.get().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'rhs-center')]")));
-			getElementscreenshot("Prod", guid, ele);
-			
-		}
-		
-		driver.get().close();
-		
-		System.out.println("--MD_OpenURLandTakeScreenshotOnProd test Passed--");
-	}
-	
-	@Test(priority=0)
-	public void RNA_OpenURLandTakeScreenshotOnTest() throws InterruptedException, IOException
-	{
-		System.out.println("--RNA_OpenURLandTakeScreenshotOnTest test Started--");
-		setThreadDataSheetName("HTMLCompare.xlsx");
-		
-		for(int i=1;i<=loopCounter;i++)
-		{
-			String guid = getParameterFromInputSheet("RNA","GUID",i,0);
-			OpenURL(getParameterFromInputSheet("RNA","URLTEST",i,0));
-			Thread.sleep(3500);
-			WebElement ele = driver.get().findElement(By.xpath("//div[contains(@class,'rhs-center')]"));
-			getElementscreenshot("Test", guid, ele);
-			
-		}
-		driver.get().close();
-		
-		System.out.println("--RNA_OpenURLandTakeScreenshotOnTest test Passed--");
-	}
-	
-	@Test(priority=0)
-	public void RNA_OpenURLandTakeScreenshotOnProd() throws InterruptedException, IOException
-	{
-		System.out.println("--RNA_OpenURLandTakeScreenshotOnProd test Started--");
-		
-		setThreadDataSheetName("HTMLCompare.xlsx");
-		
-		for(int i=1;i<=loopCounter;i++)
-		{
-			String guid = getParameterFromInputSheet("RNA","GUID",i,0);
-			OpenURL(getParameterFromInputSheet("RNA","URLPROD",i,0));
-			Thread.sleep(3500);
-			WebElement ele = wait.get().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'rhs-center')]")));
-			getElementscreenshot("Prod", guid, ele);
-			
-		}
-		
-		driver.get().close();
-		
-		System.out.println("--RNA_OpenURLandTakeScreenshotOnProd test Passed--");
 	}
 	
 	@Test(priority=1)
@@ -342,21 +258,11 @@ public class Outputs_HTMLCompare extends Global_Utilities {
 		String suiteName = context.getCurrentXmlTest().getSuite().getName();
 		System.out.println("Suite Name is: "+suiteName);
 		
-		if(suiteName.contains("DITA"))
-		{
-		System.out.println("--Started Comparing DITA Topics--");
+		
+		System.out.println("--Started WebPage Comparison--");
 		ImageComparator(System.getProperty("user.dir")+"\\Comparison\\HTML_Image_Compare\\Test", System.getProperty("user.dir")+"\\Comparison\\HTML_Image_Compare\\Prod", System.getProperty("user.dir")+"\\Comparison\\HTML_Image_Compare\\Results", "HTML");
-		}
-		else if(suiteName.contains("MD"))
-		{
-			System.out.println("--Started Comparing MD Topics--");
-			ImageComparator(System.getProperty("user.dir")+"\\Comparison\\HTML_Image_Compare\\Test", System.getProperty("user.dir")+"\\Comparison\\HTML_Image_Compare\\Prod", System.getProperty("user.dir")+"\\Comparison\\HTML_Image_Compare\\Results", "MD");	
-		}
-		else if(suiteName.contains("RNA"))
-		{
-			System.out.println("--Started Comparing RN--");
-			ImageComparator(System.getProperty("user.dir")+"\\Comparison\\HTML_Image_Compare\\Test", System.getProperty("user.dir")+"\\Comparison\\HTML_Image_Compare\\Prod", System.getProperty("user.dir")+"\\Comparison\\HTML_Image_Compare\\Results", "RNA");	
-		}
+		
+		
 		
 		driver.get().close();
 		

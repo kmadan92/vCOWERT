@@ -350,7 +350,7 @@ public class Global_Utilities {
 			int R,C;
 			Map<String,String> sheetData=new HashMap<String,String>();
 			final String dir = System.getProperty("user.dir");
-			File inputFile=new File(dir+"\\" + pathName + "\\"+ fileName);
+			File inputFile=new File(dir+"//" + pathName + "//"+ fileName);
 			Workbook wb;
 			try
 			{
