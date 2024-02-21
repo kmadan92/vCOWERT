@@ -1,0 +1,3 @@
+In the vast landscape of the internet, websites constantly evolve. Whether through design changes, content updates, or bug fixes, understanding these visual adjustments can be crucial for various purposes. That's where visual webpage comparison comes in. The tool was developed in VMware by me and hence takes its name as vCOWERT meaning (v)isually (CO)mpare (WE)bpages in (R)egression (T)esting  following the companies suites of product like vSphere, vRealize etc.
+
+This automated technique involves analyzing two webpages side-by-side, focusing on their visual aspects rather than the underlying code. It highlights differences in layout, styling, text, images, and other visual elements, helping you pinpoint changes and their impact.
